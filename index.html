@@ -35,20 +35,41 @@ https://www.youtube.com/watch?v=ZniVgo8U7ek&t=10s -->
                         Match "pairs" of cards to reveal interesting stories about the men and women who worked 
                         on this project.</div>
                 <button type="button" id="buttonIntro" onClick="off()">PLAY GAME</button>
-                <div id="author">Thomas Larkin 2019</div>
                 <!--
                 <div id="h3">Read more about this defining moment in Australia's history <a href="https://www.nma.gov.au/defining-moments/resources/snowy-mountains-hydro">here</a>.</div>
         -->
                 
         </div>
-
+        <button type="button" id="buttonAuthor" onClick = "toggleModalTom()">Developed by Thomas Larkin</button>
+        <!-- Author Information Modal Popup (Thomas Larkin) -->
+        <div class="modalAuthor">
+                <div id = "thomas" class="modalAuthor-content">
+                        <span class="close-buttonAuthor">&times;</span>
+                        <h1>Thomas Larkin</h1>
+                        <div id = "modalInfoAuthor">
+                                <div id = "modalBlurbAuthor">
+                                      Hi, I'm Thomas! <br><br>
+                                      I study Engineering and Arts at the Australian National University. I made this digital resource as part
+                                      of a course investing the use of digital methods to reimagine historical artifacts. <br><br>
+                                      I decided to focus on the construction of the Snowy Mountains Hydroelectric system because I was fascinated 
+                                      by the impacts this project had on both the technical and social landscape of Australia.<br><br>
+                                      I built this resource using some basic web development skills, resources from the National Archives of Australia and 
+                                      the use of Adobe Illustrator to create each of the character cards in the memory game. <br><br>
+                                      I hope you enjoy using this digital resource! - January 2020
+                                </div>
+                                
+                        </div>
+                        <img id = "modalIMG" src="img/TLarkin_Sketch.svg" alt="TLarkin"/>
+                </div>
+        </div>
 </div>
 
 
-
+<div>
+        <button type="button" id="buttonHome" onClick="loadHome()">HOME</button>
+</div>
 
     <section class = "memory-game">
-
 
         <div class = "modalInstructions">
                 <div id = "instructionsBlurb">
@@ -56,126 +77,217 @@ https://www.youtube.com/watch?v=ZniVgo8U7ek&t=10s -->
                 </div>                        
         </div>
 
+
         <!--This html contains two copies of the first card, both front and back face-->
-        <div class="memory-card" data-framework="DLeckie">
+        <div class="memory-card DLeckie" data-framework="DLeckie">
             <img class="front-face" src="img/1.0_DLeckieCard.svg" alt="DLeckie"/>
             <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="DLeckie">
+        <div class="memory-card DLeckie" data-framework="DLeckie">
                 <img class="front-face" src="img/1.0_DLeckieCard.svg" alt="DLeckie"/>
                 <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
         <!--Second Card-->
-        <div class="memory-card" data-framework="PMeredith">
+        <div class="memory-card PMeredith" data-framework="PMeredith">
                 <img class="front-face" src="img/2.0_PMeredithCard.svg" alt="PMeredith"/>
                 <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="PMeredith">
+        <div class="memory-card PMeredith" data-framework="PMeredith">
                     <img class="front-face" src="img/2.0_PMeredithCard.svg" alt="PMeredith"/>
                     <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Third Card-->
-        <div class="memory-card" data-framework="HJeromin">
+        <div class="memory-card HJeromin" data-framework="HJeromin">
                 <img class="front-face" src="img/3.0_HJerominCard.svg" alt="HJeromin"/>
                 <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="HJeromin">
+        <div class="memory-card HJeromin" data-framework="HJeromin">
                     <img class="front-face" src="img/3.0_HJerominCard.svg" alt="HJeromin"/>
                     <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Fourth Card-->
-        <div class="memory-card" data-framework="IBotka">
+        <div class="memory-card IBotka" data-framework="IBotka">
                 <img class="front-face" src="img/4.0_IBotka.svg" alt="IBotka"/>
                 <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="IBotka">
+        <div class="memory-card IBotka" data-framework="IBotka">
                     <img class="front-face" src="img/4.0_IBotka.svg" alt="IBotka"/>
                     <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Fifth Card-->
-        <div class="memory-card" data-framework="KSinkevicius">
+        <div class="memory-card KSinkevicius" data-framework="KSinkevicius">
                 <img class="front-face" src="img/5.0_KSinkeviciusCard.svg" alt="KSinkevicius"/>
                 <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="KSinkevicius">
+        <div class="memory-card KSinkevicius" data-framework="KSinkevicius">
                     <img class="front-face" src="img/5.0_KSinkeviciusCard.svg" alt="KSinkevicius"/>
                     <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Sixth Card-->
-        <div class="memory-card" data-framework="AGlavica">
+        <div class="memory-card AGlavica" data-framework="AGlavica">
                 <img class="front-face" src="img/6.0_AGlavicaCard.svg" alt="AGlavica"/>
                 <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="AGlavica">
+        <div class="memory-card AGlavica" data-framework="AGlavica">
                     <img class="front-face" src="img/6.0_AGlavicaCard.svg" alt="AGlavica"/>
                     <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Seventh Card-->
-        <div class="memory-card" data-framework="JPeska">
+        <div class="memory-card JPeska" data-framework="JPeska">
                         <img class="front-face" src="img/7.0_JPeskaCard.svg" alt="JPeska"/>
                         <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="JPeska">
+        <div class="memory-card JPeska" data-framework="JPeska">
                             <img class="front-face" src="img/7.0_JPeskaCard.svg" alt="JPeska"/>
                             <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Eigth Card-->
-        <div class="memory-card" data-framework="RLodge">
+        <div class="memory-card RLodge" data-framework="RLodge">
                         <img class="front-face" src="img/8.0_RLodgeCard.svg" alt="RLodge"/>
                         <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="RLodge">
+        <div class="memory-card RLodge" data-framework="RLodge">
                             <img class="front-face" src="img/8.0_RLodgeCard.svg" alt="RLodge"/>
                             <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Ninth Card-->
-        <div class="memory-card" data-framework="GVanWezel">
+        <div class="memory-card GVanWezel" data-framework="GVanWezel">
                         <img class="front-face" src="img/9.0_GVanWezelCard.svg" alt="GVanWezel"/>
                         <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="GVanWezel">
+        <div class="memory-card GVanWezel" data-framework="GVanWezel">
                             <img class="front-face" src="img/9.0_GVanWezelCard.svg" alt="GVanWezel"/>
                             <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
         <!--Tenth Card-->
-        <div class="memory-card" data-framework="ABeranek">
+        <div class="memory-card ABeranek" data-framework="ABeranek">
                         <img class="front-face" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
                         <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
-        <div class="memory-card" data-framework="ABeranek">
+        <div class="memory-card ABeranek" data-framework="ABeranek">
                             <img class="front-face" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
                             <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <!--Eleventh Card-->
+        <div class="memory-card HGibbs" data-framework="HGibbs">
+                        <img class="front-face" src="img/11.0_HEHGibbs.svg" alt="HGibbs"/>
+                        <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card HGibbs" data-framework="HGibbs">
+                        <img class="front-face" src="img/11.0_HEHGibbs.svg" alt="HGibbs"/>
+                        <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+        <!--Twelth Card-->
+        <div class="memory-card RBrodie" data-framework="RBrodie">
+                <img class="front-face" src="img/12.0_RTBrodie.svg" alt="RBrodie"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card RBrodie" data-framework="RBrodie">
+                <img class="front-face" src="img/12.0_RTBrodie.svg" alt="RBrodie"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+        <!-- Thirteenth Card-->
+        <div class="memory-card CHarvey" data-framework="CHarvey">  
+                <img class="front-face" src="img/13.0_CDHarvey.svg" alt="CHarvey"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card CHarvey" data-framework="CHarvey">
+                <img class="front-face" src="img/13.0_CDHarvey.svg" alt="CHarvey"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+        <!-- Forteenth Card-->
+        <div class="memory-card RBelin" data-framework="RBelin">
+                <img class="front-face" src="img/14.0_REBelin.svg" alt="RBelin"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card RBelin" data-framework="RBelin">
+                <img class="front-face" src="img/14.0_REBelin.svg" alt="RBelin"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+
+        <!-- Fifteenth Card-->
+        <div class="memory-card PJFrench" data-framework="PJFrench">
+                <img class="front-face" src="img/15.0_PJFrench.svg" alt="PJFrench"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card PJFrench" data-framework="PJFrench">
+                <img class="front-face" src="img/15.0_PJFrench.svg" alt="PJFrench"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+
+        <!-- Sixteenth Card-->
+        <div class="memory-card TMCrawford" data-framework="TMCrawford">
+                <img class="front-face" src="img/16.0_TMCrawford.svg" alt="TMCrawford"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card TMCrawford" data-framework="TMCrawford">
+                <img class="front-face" src="img/16.0_TMCrawford.svg" alt="TMCrawford"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+
+        <!-- Seventeenth Card-->
+        <div class="memory-card JGotts" data-framework="JGotts">
+                <img class="front-face" src="img/17.0_JGotts.svg" alt="JGotts"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card JGotts" data-framework="JGotts">
+                <img class="front-face" src="img/17.0_JGotts.svg" alt="JGotts"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+
+
+        <!-- Eighteenth Card-->
+        <div class="memory-card FRGibbs" data-framework="FRGibbs">
+                <img class="front-face" src="img/18.0_FRGibbs.svg" alt="FRGibbs"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
+        </div>
+        <div class="memory-card FRGibbs" data-framework="FRGibbs">
+                <img class="front-face" src="img/18.0_FRGibbs.svg" alt="FRGibbs"/>
+                <img class="back-face" src="img/Back_Face_Triangle.svg" alt="JS Badge"/>
         </div>
 
 
     </section>
     <div id = "navBottom" style="text-align: center;">
         <div class= "navButtons">
-                <button type="button" id="buttonNav" onClick="resetboard()">RESET BOARD</button>
-                <button type="button" id="buttonNav">INSTRUCTIONS</button>
-                <button type="button" id="buttonQuiz" onClick = "window.location.href = 'quiz.html'">QUIZ</button>
+                <button type="button" id="buttonNav" onClick="shuffle()">RESET BOARD</button>
+                <button type="button" id="buttonNav" onClick = "window.location.href = 'quiz.html'">QUIZ</button>
         </div>
     </div>
         
         <div class="imgBottom">
-                <img class="imgB" src="img/1.0_DLeckieCard.svg" alt="DLeckie"/>
-                <img class="imgB" src="img/2.0_PMeredithCard.svg" alt="PMeredith"/>
-                <img class="imgB" src="img/3.0_HJerominCard.svg" alt="HJeromin"/>
-                <img class="imgB" src="img/4.0_IBotka.svg" alt="IBotka"/>
-                <img class="imgB" src="img/5.0_KSinkeviciusCard.svg" alt="KSinkevicius"/>
-                <img class="imgB" src="img/6.0_AGlavicaCard.svg" alt="AGlavica"/>
-                <img class="imgB" src="img/7.0_JPeskaCard.svg" alt="JPeska"/>
-                <img class="imgB" src="img/8.0_RLodgeCard.svg" alt="RLodge"/>
-                <img class="imgB" src="img/9.0_GVanWezelCard.svg" alt="GVanWezel"/>
-                <img class="imgB" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
+                <img class="imgB DLeckie" src="img/1.0_DLeckieCard.svg" alt="DLeckie"/>
+                <img class="imgB PMeredith" src="img/2.0_PMeredithCard.svg" alt="PMeredith"/>
+                <img class="imgB HJeromin" src="img/3.0_HJerominCard.svg" alt="HJeromin"/>
+                <img class="imgB IBotka" src="img/4.0_IBotka.svg" alt="IBotka"/>
+                <img class="imgB KSinkevicius" src="img/5.0_KSinkeviciusCard.svg" alt="KSinkevicius"/>
+                <img class="imgB AGlavica" src="img/6.0_AGlavicaCard.svg" alt="AGlavica"/>
+                <img class="imgB JPeska" src="img/7.0_JPeskaCard.svg" alt="JPeska"/>
+                <img class="imgB RLodge" src="img/8.0_RLodgeCard.svg" alt="RLodge"/>
+                <img class="imgB GVanWezel" src="img/9.0_GVanWezelCard.svg" alt="GVanWezel"/>
+                <img class="imgB ABeranek" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
+                <img class="imgB HGibbs" src="img/11.0_HEHGibbs.svg" alt="HGibbs"/>
+                <img class="imgB RBrodie" src="img/12.0_RTBrodie.svg" alt="RBrodie"/>
+                <img class="imgB CHarvey" src="img/13.0_CDHarvey.svg" alt="CHarvey"/>
+                <img class="imgB RBelin" src="img/14.0_REBelin.svg" alt="RBelin"/>
+                <img class="imgB PJFrench" src="img/15.0_PJFrench.svg" alt="PJFrench"/>
+                <img class="imgB TMCrawford" src="img/16.0_TMCrawford.svg" alt="TMCrawford"/>
+                <img class="imgB JGotts" src="img/17.0_JGotts.svg" alt="JGotts"/>
+                <img class="imgB FRGibbs" src="img/18.0_FRGibbs.svg" alt="FRGibbs"/>
         </div>
 
 
@@ -426,6 +538,141 @@ https://www.youtube.com/watch?v=ZniVgo8U7ek&t=10s -->
                 </div>
         </div>
 
+        <!--Eleventh Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Harold Ernest Henry Gibbs</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Electrical Engineer<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain<br><br>
+                                <div id = "modalBlurb">
+                                Harold Gibbs - Electrical Engineer - blurb to go here
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/11.0_HEHGibbs.svg" alt="ABeranek"/>
+                </div>
+        </div>
+
+        <!--Twelfth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Robert Turner Brodie</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Scientific Services Division (Engineer)<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain<br><br>
+                                <div id = "modalBlurb">
+                                Robert Brodie blurb here
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/12.0_RTBrodie.svg" alt="ABeranek"/>
+                </div>
+        </div>
+
+        <!--Thirteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Constance Dora Harvey</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Artist/Tracer<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Australian<br><br>
+                                <div id = "modalBlurb">
+                                Constance Harvey - blurb needs to be added here
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/13.0_CDHarvey.svg" alt="ABeranek"/>
+                </div>
+        </div>
+
+        <!--Forteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Rudolf Ernest Belin</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Scientific Officer<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                                <div id = "modalBlurb">
+                                Rudolf Belin - Scientific Officer - blurb needs to be added here 
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/14.0_REBelin.svg" alt="ABeranek"/>
+                </div>
+        </div>
+
+        <!--Fifteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Peter James French</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Apprentice Electrical Fitter<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                                <div id = "modalBlurb">
+                                Peter James French - Scientific Officer - blurb needs to be added here 
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/15.0_PJFrench.svg" alt="PJFrench"/>
+                </div>
+        </div>
+
+        <!--Sixteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Thomas Crawford</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Grade II Engineer (Electrical)<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Australian<br><br>
+                                <div id = "modalBlurb">
+                                Thomas Matthew Crawford - blurb needs to be added here 
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/16.0_TMCrawford.svg" alt="TMCrawford"/>
+                </div>
+        </div>
+
+        <!--Seventeenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Joseph Gotts</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Technical Records Officer<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain<br><br>
+                                <div id = "modalBlurb">
+                                Joseph Gotts - blurb needs to be added here 
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/17.0_JGotts.svg" alt="JGotts"/>
+                </div>
+        </div>
+
+        <!--Eighteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Francis Gibbs</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Model Maker<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain<br><br>
+                                <div id = "modalBlurb">
+                                Francis Gibbs blurb needs to be added here 
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/18.0_FRGibbs.svg" alt="ABeranek"/>
+                </div>
+        </div>
         <script src = "scripts.js"></script>
 </body>
 
