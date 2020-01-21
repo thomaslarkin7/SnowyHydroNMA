@@ -6,18 +6,57 @@ var imgBs = document.getElementsByClassName('imgB');
 // document.addEventListener("DOMContentLoaded", function(e) {
 //   var closeButtons = document.getElementsByClassName('close-button');
 //   var closeButton = document.querySelector(".close-button");
-//   console.log(closeButtons);
-//   console.log(closeButtons[0]);
 // });
 var closeButtons = document.getElementsByClassName('close-button');
 var closeButton = document.querySelector(".close-button");
-//console.log(closeButtons);
-//console.log(closeButtons.length);
+
+var quizNum = boardSize; //boardSize variable taken directly from the scripts.js file
+
+
+    // Card 1 to remove from Game
+    var card1 = document.getElementsByClassName(removeCardsArray[0]);
+    card1[0].style.display = 'none';
+    //card1[1].style.display = 'none';
+    
+    // Card 2 to remove from Game
+    var card2 = document.getElementsByClassName(removeCardsArray[1]);
+    card2[0].style.display = 'none';
+    //card2[1].style.display = 'none';
+    
+    // Card 3 to remove from Game
+    var card3 = document.getElementsByClassName(removeCardsArray[2]);
+    card3[0].style.display = 'none';
+    //card3[1].style.display = 'none';
+    
+    // Card 4 to remove from Game
+    var card4 = document.getElementsByClassName(removeCardsArray[3]);
+    card4[0].style.display = 'none';
+    //card4[1].style.display = 'none';
+
+    // Card 5 to remove from Game
+    var card5 = document.getElementsByClassName(removeCardsArray[4]);
+    card5[0].style.display = 'none';
+    //card4[1].style.display = 'none';
+  
+    // Card 6 to remove from Game
+    var card6 = document.getElementsByClassName(removeCardsArray[5]);
+    card6[0].style.display = 'none';
+    //card4[1].style.display = 'none';
+
+    // Card 7 to remove from Game
+    var card7 = document.getElementsByClassName(removeCardsArray[6]);
+    card7[0].style.display = 'none';
+    //card4[1].style.display = 'none';
+
+    // Card 8 to remove from Game
+    var card8 = document.getElementsByClassName(removeCardsArray[7]);
+    card8[0].style.display = 'none';
+    //card4[1].style.display = 'none';
 
 // Get the modal
-var modal = document.getElementById("myModal");
+//var modal = document.getElementById("myModal");
 
-// Array of all the questions and choices to populate the questions. This might be saved in some JSON file or a database and we would have to read the data in.
+// Array of all the questions and answers.
 var all_questions = [{
     question_string: "What does the Oswald Watt Medal recognise?",
     choices: {
@@ -84,12 +123,69 @@ var all_questions = [{
       correct: "Typing fast, but with no errors",
       wrong: ["Cleaning typewriters", "Typing as quickly as possible", "Handwriting letters"]
     }
+  },
+  {
+    question_string: 'A Question about Harold Ernest Henry Gibbs?',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A Question about Robert Turner Brodie.',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A question about Constance Harvey.',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A question about Rudolf Belin.',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A question about Peter J French.',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A question about Thomas Matthew Crawford.',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A question about Joseph Gotts',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
+  },
+  {
+    question_string: 'A question about Francis Gibbs.',
+    choices: {
+      correct: "Correct",
+      wrong: ["Incorrect", "Incorrect", "Incorrect"]
+    }
   }
 
-];
+]; // end Array of Questions and Answers
   
   // An object for a Quiz, which will contain Question objects.
   var Quiz = function(quiz_name) {
+    
     // Private fields for an instance of a Quiz object.
     this.quiz_name = quiz_name;
     
@@ -101,6 +197,7 @@ var all_questions = [{
   Quiz.prototype.add_question = function(question) {
     // Randomly choose where to add question
     var index_to_add_question = Math.floor(Math.random() * this.questions.length);
+
     this.questions.splice(index_to_add_question, 0, question);
   }
   
@@ -133,7 +230,7 @@ var all_questions = [{
           break;
         }
       }
-      $('#submit-button').prop('disabled', !all_questions_answered);
+      $('#submit-button').prop('disabled', !all_questions_answered); //enable the 'submit' button if all of the questions have been answered
     }
     
     // Render the first question
@@ -166,7 +263,8 @@ var all_questions = [{
         }
         
      $('#quiz-retry-button').click(function(reset) {
-        quiz.render(quiz_container);
+      // Reload the page
+      location.reload();
      });
       
       }
@@ -175,7 +273,7 @@ var all_questions = [{
       
       // Display the score with the appropriate message
       var percentage = score / self.questions.length;
-      console.log(percentage);
+      //console.log(percentage);
       var message;
       if (percentage === 1) {
         message = 'Great job!'
@@ -217,8 +315,8 @@ var all_questions = [{
     this.user_choice_index = null; // Index of the user's choice selection
     
     // Random assign the correct choice an index
-    this.correct_choice_index = Math.floor(Math.random(0, wrong_choices.length + 1));
-    
+    this.correct_choice_index = Math.floor((Math.random()*wrong_choices.length)+0);
+
     // Fill in this.choices with the choices
     var number_of_choices = wrong_choices.length + 1;
     for (var i = 0; i < number_of_choices; i++) {
@@ -226,7 +324,7 @@ var all_questions = [{
         this.choices[i] = correct_choice;
       } else {
         // Randomly pick a wrong choice to put in this index
-        var wrong_choice_index = Math.floor(Math.random(0, wrong_choices.length));
+        var wrong_choice_index = Math.floor((Math.random()*wrong_choices.length)+0);
         this.choices[i] = wrong_choices[wrong_choice_index];
         
         // Remove the wrong choice from the wrong choice array so that we don't pick it again
@@ -235,7 +333,8 @@ var all_questions = [{
     }
   }
   
-  // A function that you can enact on an instance of a question object. This function is called render() and takes in a variable called the container, which is the <div> that I will render the question in. This question will "return" with the score when the question has been answered.
+  // A function that you can enact on an instance of a question object. This function is called render() and takes in a variable called the container, 
+  // which is the <div> that I will render the question in. This question will "return" with the score when the question has been answered.
   Question.prototype.render = function(container) {
     // For when we're out of scope
     var self = this;
@@ -292,17 +391,25 @@ var all_questions = [{
     var quiz = new Quiz('Snowy Hydro Quiz');
     
     // Create Question objects from all_questions and add them to the Quiz object
-    for (var i = 0; i < all_questions.length; i++) {
+
+    // recall that numUniqueCards is the number of unique cards used in the previous memory game (not all displayed)
+    for (var i = 0; i < numUniqueCards; i++) {
       // Create a new Question object
-      var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, all_questions[i].choices.wrong);
-      
-      // Add the question to the instance of the Quiz object that we created previously
-      quiz.add_question(question);
+      if (removeCards.includes(i)){
+        //do nothing
+      }else{
+        var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, all_questions[i].choices.wrong);
+        // Add the question to the instance of the Quiz object that we created previously
+        quiz.add_question(question);
+      }
+      // removeCards
     }
+    //console.log(quiz);
     
     // Render the quiz
     var quiz_container = $('#quiz');
     quiz.render(quiz_container);
+    console.log("successful rendering here");
   });
 
 
@@ -335,6 +442,30 @@ function toggleImgAu(){imgBs[8].style.visibility = "visible";}
 
 function toggleModalD(){modals[9].classList.toggle("show-modal");}
 function toggleImgD(){imgBs[9].style.visibility = "visible";}
+
+function toggleModalJ(){modals[10].classList.toggle("show-modal");}
+function toggleImgJ(){imgBs[10].style.display = "block";}
+
+function toggleModalJ2(){modals[11].classList.toggle("show-modal");}
+function toggleImgJ2(){imgBs[11].style.display = "block";}
+
+function toggleModalJ3(){modals[12].classList.toggle("show-modal");}
+function toggleImgJ3(){imgBs[12].style.display = "block";}
+
+function toggleModalJ4(){modals[13].classList.toggle("show-modal");}
+function toggleImgJ4(){imgBs[13].style.display = "block";}
+
+function toggleModalJ5(){modals[14].classList.toggle("show-modal");}
+function toggleImgJ5(){imgBs[14].style.display = "block";}
+
+function toggleModalJ6(){modals[15].classList.toggle("show-modal");}
+function toggleImgJ6(){imgBs[15].style.display = "block";}
+
+function toggleModalJ7(){modals[16].classList.toggle("show-modal");}
+function toggleImgJ7(){imgBs[16].style.display = "block";}
+
+function toggleModalJ8(){modals[17].classList.toggle("show-modal");}
+function toggleImgJ8(){imgBs[17].style.display = "block";}
 
 
 // When the user clicks anywhere outside of the modal, close it
@@ -375,3 +506,27 @@ closeButtons[8].addEventListener("click", toggleImgAu); //Img R to appear Au
 
 closeButtons[9].addEventListener("click", toggleModalD); //Close Button D
 closeButtons[9].addEventListener("click", toggleImgD); //Img D to appear
+
+closeButtons[10].addEventListener("click", toggleModalJ); //Close Button D
+closeButtons[10].addEventListener("click", toggleImgJ); //Img D to appear
+
+closeButtons[11].addEventListener("click", toggleModalJ2); //Close Button D
+closeButtons[11].addEventListener("click", toggleImgJ2); //Img D to appear
+
+closeButtons[12].addEventListener("click", toggleModalJ3); //Close Button D
+closeButtons[12].addEventListener("click", toggleImgJ3); //Img D to appear
+
+closeButtons[13].addEventListener("click", toggleModalJ4); //Close Button D
+closeButtons[13].addEventListener("click", toggleImgJ4); //Img D to appear
+
+closeButtons[14].addEventListener("click", toggleModalJ5); //Close Button D
+closeButtons[14].addEventListener("click", toggleImgJ5); //Img D to appear
+
+closeButtons[15].addEventListener("click", toggleModalJ6); //Close Button D
+closeButtons[15].addEventListener("click", toggleImgJ6); //Img D to appear
+
+closeButtons[16].addEventListener("click", toggleModalJ7); //Close Button D
+closeButtons[16].addEventListener("click", toggleImgJ7); //Img D to appear
+
+closeButtons[17].addEventListener("click", toggleModalJ8); //Close Button D
+closeButtons[17].addEventListener("click", toggleImgJ8); //Img D to appear
