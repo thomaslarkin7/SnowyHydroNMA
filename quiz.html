@@ -1,14 +1,28 @@
 <!--
-    Tutorial For building the quiz can be found here
-    https://www.sitepoint.com/simple-javascript-quiz/
+
+Copyright (c) 2020 - THOMAS LARKIN - https://codepen.io/teachtyler/pres/raEprM
+
+Permission is hereby granted, free of charge, to any person 
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, 
+merge, publish, distribute, sublicense, and/or sell copies of 
+the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall 
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
 
 -->
-
-<!--
-    And a second one here
-    https://codepen.io/teachtyler/pres/raEprM
--->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +32,9 @@
     <link rel="stylesheet" href = "quiz.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Righteous|Timmana&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="sketch.js"></script>
+    
+    <script src = "scripts.js"></script>
 
 </head>
 
@@ -46,43 +63,76 @@
     </div>
 
     <div class="imgBottom">
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalA()" src="img/1.0_DLeckieCard.svg" alt="DLeckie"/>
-            </div>
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalV()" src="img/2.0_PMeredithCard.svg" alt="PMeredith"/>
-            </div>
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalAn()" src="img/3.0_HJerominCard.svg" alt="HJeromin"/>
-            </div>
+                <div class="img-hover-zoom DLeckie">
+                        <img class="imgB" onclick = "toggleModalA()" src="img/1.0_DLeckieCard.svg" alt="DLeckie"/>
+                </div>
 
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalE()" src="img/4.0_IBotka.svg" alt="IBotka"/>
-            </div>
+                <div class="img-hover-zoom PMeredith">
+                        <img class="imgB" onclick = "toggleModalV()" src="img/2.0_PMeredithCard.svg" alt="PMeredith"/>
+                </div>
+                <div class="img-hover-zoom HJeromin">
+                        <img class="imgB" onclick = "toggleModalAn()" src="img/3.0_HJerominCard.svg" alt="HJeromin"/>
+                </div>
 
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalB()" src="img/5.0_KSinkeviciusCard.svg" alt="KSinkevicius"/>
-            </div>
+                <div class="img-hover-zoom IBotka">
+                        <img class="imgB" onclick = "toggleModalE()" src="img/4.0_IBotka.svg" alt="IBotka"/>
+                </div>
 
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalR()" src="img/6.0_AGlavicaCard.svg" alt="AGlavica"/>
-            </div>
+                <div class="img-hover-zoom KSinkevicius">
+                        <img class="imgB" onclick = "toggleModalB()" src="img/5.0_KSinkeviciusCard.svg" alt="KSinkevicius"/>
+                </div>
+
+                <div class="img-hover-zoom AGlavica">
+                        <img class="imgB" onclick = "toggleModalR()" src="img/6.0_AGlavicaCard.svg" alt="AGlavica"/>
+                </div>
             
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalH()" src="img/7.0_JPeskaCard.svg" alt="JPeska"/>
-            </div>
+                <div class="img-hover-zoom JPeska">
+                        <img class="imgB" onclick = "toggleModalH()" src="img/7.0_JPeskaCard.svg" alt="JPeska"/>
+                </div>
 
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalAp()" src="img/8.0_RLodgeCard.svg" alt="RLodge"/>
-            </div>
+                <div class="img-hover-zoom RLodge">
+                        <img class="imgB" onclick = "toggleModalAp()" src="img/8.0_RLodgeCard.svg" alt="RLodge"/>
+                </div>
 
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalAu()" src="img/9.0_GVanWezelCard.svg" alt="GVanWezel"/>
-            </div>
+                <div class="img-hover-zoom GVanWezel">
+                        <img class="imgB" onclick = "toggleModalAu()" src="img/9.0_GVanWezelCard.svg" alt="GVanWezel"/>
+                </div>
 
-            <div class="img-hover-zoom">
-            <img class="imgB" onclick = "toggleModalD()" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
-            </div>
+                <div class="img-hover-zoom ABeranek">
+                        <img class="imgB" onclick = "toggleModalD()" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
+                </div>
+
+                <div class="img-hover-zoom HGibbs">
+                        <img class="imgB" onclick = "toggleModalJ()" src="img/11.0_HEHGibbs.svg" alt="HGibbs"/>
+                </div>
+    
+                <div class="img-hover-zoom RBrodie">
+                        <img class="imgB" onclick = "toggleModalJ2()" src="img/12.0_RTBrodie.svg" alt="RBrodie"/>
+                </div>
+    
+                <div class="img-hover-zoom CHarvey">
+                        <img class="imgB" onclick = "toggleModalJ3()" src="img/13.0_CDHarvey.svg" alt="CHarvey"/>
+                </div>
+    
+                <div class="img-hover-zoom RBelin">
+                        <img class="imgB" onclick = "toggleModalJ4()" src="img/14.0_REBelin.svg" alt="RBelin"/>
+                </div>
+
+                <div class="img-hover-zoom PJFrench">
+                        <img class="imgB" onclick = "toggleModalJ5()" src="img/15.0_PJFrench.svg" alt="PJFrench"/>
+                </div>
+
+                <div class="img-hover-zoom TMCrawford">
+                        <img class="imgB" onclick = "toggleModalJ6()" src="img/16.0_TMCrawford.svg" alt="TMCrawford"/>
+                </div>
+
+                <div class="img-hover-zoom JGotts">
+                        <img class="imgB" onclick = "toggleModalJ7()" src="img/17.0_JGotts.svg" alt="JGotts"/>
+                </div>
+
+                <div class="img-hover-zoom FRGibbs">
+                        <img class="imgB" onclick = "toggleModalJ8()" src="img/18.0_FRGibbs.svg" alt="FRGibbs"/>
+                </div>
     </div>
 
     
@@ -330,6 +380,143 @@
                     <img id = "modalIMG" src="img/10.0_ABeranekCard.svg" alt="ABeranek"/>
             </div>
     </div>
+
+    <!--Eleventh Card Modal-->
+    <div class="modal">
+        <div id = "drill" class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1>Harold Ernest Henry Gibbs</h1>
+                <div id = "modalInfo">
+                        <strong>Occupation: </strong>Electrical Engineer<br>
+                        <strong>Years Employed: </strong>---<br>
+                        <strong>Country of Origin: </strong>Great Britain<br><br>
+                        <div id = "modalBlurb">
+                        Harold Gibbs - Electrical Engineer - blurb to go here
+                        </div>  
+                </div>
+                <img id = "modalIMG" src="img/11.0_HEHGibbs.svg" alt="HEHGibbs"/>
+        </div>
+
+        </div>
+
+        <!--Twelfth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Robert Turner Brodie</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Scientific Services Division (Engineer)<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain<br><br>
+                                <div id = "modalBlurb">
+                                Robert Brodie blurb here
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/12.0_RTBrodie.svg" alt="RTBrodie"/>
+                </div>
+        </div>
+
+        <!--Thirteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Constance Dora Harvey</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Artist/Tracer<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Australian<br><br>
+                                <div id = "modalBlurb">
+                                Constance Harvey - blurb needs to be added here
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/13.0_CDHarvey.svg" alt="CDHarvey"/>
+                </div>
+        </div>
+
+        <!--Forteenth Card Modal-->
+        <div class="modal">
+                <div id = "drill" class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Rudolf Ernest Belin</h1>
+                        <div id = "modalInfo">
+                                <strong>Occupation: </strong>Scientific Officer<br>
+                                <strong>Years Employed: </strong>---<br>
+                                <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                                <div id = "modalBlurb">
+                                Rudolf Belin - Scientific Officer - blurb needs to be added here 
+                                </div>  
+                        </div>
+                        <img id = "modalIMG" src="img/14.0_REBelin.svg" alt="REBelin"/>
+                </div>
+        </div>
+
+<!--Fifteenth Card Modal-->
+<div class="modal">
+        <div id = "drill" class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1>Peter James French</h1>
+                <div id = "modalInfo">
+                        <strong>Occupation: </strong>Scientific Officer<br>
+                        <strong>Years Employed: </strong>---<br>
+                        <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                        <div id = "modalBlurb">
+                        Rudolf Belin - Scientific Officer - blurb needs to be added here 
+                        </div>  
+                </div>
+                <img id = "modalIMG" src="img/15.0_PJFrench.svg" alt="PJFrench"/>
+        </div>
+</div>
+
+<!--Sixteenth Card Modal-->
+<div class="modal">
+        <div id = "drill" class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1>Thomas Matthew Crawford</h1>
+                <div id = "modalInfo">
+                        <strong>Occupation: </strong>Scientific Officer<br>
+                        <strong>Years Employed: </strong>---<br>
+                        <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                        <div id = "modalBlurb">
+                        Thomas Matthew Crawford - blurb needs to be added here 
+                        </div>  
+                </div>
+                <img id = "modalIMG" src="img/16.0_TMCrawford.svg" alt="TMCrawford"/>
+        </div>
+</div>
+
+<!--Seventeenth Card Modal-->
+<div class="modal">
+        <div id = "drill" class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1>Joseph Gotts</h1>
+                <div id = "modalInfo">
+                        <strong>Occupation: </strong><br>
+                        <strong>Years Employed: </strong>---<br>
+                        <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                        <div id = "modalBlurb">
+                         Joseph Gotts - blurb needs to be added here 
+                        </div>  
+                </div>
+                <img id = "modalIMG" src="img/17.0_JGotts.svg" alt="JGotts"/>
+        </div>
+</div>
+
+<!--Eighteenth Card Modal-->
+<div class="modal">
+        <div id = "drill" class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1>Francis Gibbs</h1>
+                <div id = "modalInfo">
+                        <strong>Occupation: </strong>Scientific Officer<br>
+                        <strong>Years Employed: </strong>---<br>
+                        <strong>Country of Origin: </strong>Great Britain (born in Scotland)<br><br>
+                        <div id = "modalBlurb">
+                        Francis Gibbs - blurb needs to be added here 
+                        </div>  
+                </div>
+                <img id = "modalIMG" src="img/18.0_FRGibbs.svg" alt="FRGibbs"/>
+        </div>
+</div>
 
     <script type="text/javascript" src="quiz.js"></script>
 
