@@ -4,11 +4,9 @@
 //const cards = document.querySelectorAll('.memory-card');
 let cards = document.querySelectorAll('.memory-card');
 //console.log(cards.length);
-//console.log(cards);
-//cards.splice(4, 2);
-//console.log(cards.length);
 
-let numCards = 20;
+let numUniqueCards = 18;
+let boardSize = 10;
 let matchedCards = 0;
 
 let hasFlippedCard = false;
@@ -16,6 +14,43 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let cardValue;
+
+//Array with each of the card names, used to randomly select cards
+var cardNames = ["DLeckie", "PMeredith", "HJeromin", "IBotka", "KSinkevicius", 
+                "AGlavica", "JPeska", "RLodge", "GVanWezel", "ABeranek", 
+                "HGibbs", "RBrodie", "CHarvey", "RBelin", "PJFrench", "TMCrawford",
+                "JGotts", "FRGibbs"];
+
+var cardNamesDisplay = [];
+
+var randN = 0;
+var currentRandS;
+var removeCards = [];
+while(randN < numUniqueCards - boardSize){
+    var randSelection = Math.floor((Math.random() * 13) + 0); //randomly select a number between 0 and 13 (inclusive)
+    if (removeCards.includes(randSelection)){
+        // do nothing
+    }else{
+        removeCards.push(randSelection); //push this number to the array 'removeCards'
+        randN++;
+    }
+}
+//console.log(removeCards);
+var removeCardsArray = [cardNames[removeCards[0]], cardNames[removeCards[1]], cardNames[removeCards[2]], cardNames[removeCards[3]],
+                        cardNames[removeCards[4]], cardNames[removeCards[5]], cardNames[removeCards[6]], cardNames[removeCards[7]],
+]
+//console.log(removeCardsArray);
+
+
+for (var j = 0; j<numUniqueCards; j++){
+    if (removeCards.includes(j)){
+        //do nothing
+    }else{
+        cardNamesDisplay.push(cardNames[j]);
+    }
+}
+
+//console.log(cardNamesDisplay);
 
 //MODAL VARIABLES
 //Taken from this webpage https://sabe.io/tutorials/how-to-create-modal-popup-box
@@ -25,11 +60,15 @@ var modal = document.querySelector(".modal");
 var modals = document.getElementsByClassName('modal');
 var imgBs = document.getElementsByClassName('imgB');
 
+// Author popup modal
+var modalAuthor = document.getElementsByClassName('modalAuthor');
+var closeButtonsAuthor = document.getElementsByClassName('close-buttonAuthor');
+
 //var trigger = document.querySelector(".trigger");
 var closeButtons = document.getElementsByClassName('close-button');
 var closeButton = document.querySelector(".close-button");
-console.log(closeButtons);
-console.log(closeButtons[0]);
+//console.log(closeButtons);
+//console.log(closeButtons[0]);
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
@@ -77,6 +116,14 @@ function checkForMatch(){
             else if (cardValue == 'RLodge'){setTimeout(toggleModalAp, 1500);}
             else if (cardValue == 'GVanWezel'){setTimeout(toggleModalAu, 1500);}
             else if (cardValue == 'ABeranek'){setTimeout(toggleModalD, 1500);}
+            else if (cardValue == 'HGibbs'){setTimeout(toggleModalJ, 1500);}
+            else if (cardValue == 'RBrodie'){setTimeout(toggleModalJ2, 1500);}
+            else if (cardValue == 'CHarvey'){setTimeout(toggleModalJ3, 1500);}
+            else if (cardValue == 'RBelin'){setTimeout(toggleModalJ4, 1500);}
+            else if (cardValue == 'PJFrench'){setTimeout(toggleModalJ5, 1500);}
+            else if (cardValue == 'TMCrawford'){setTimeout(toggleModalJ6, 1500);}
+            else if (cardValue == 'JGotts'){setTimeout(toggleModalJ7, 1500);}
+            else if (cardValue == 'FRGibbs'){setTimeout(toggleModalJ8, 1500);}
             else{
                 console.log('Congratulations, you are done!')
             }
@@ -92,36 +139,64 @@ function checkForMatch(){
 //console.log(imgBs);
     //If the cards matched are the Australia Cards, toggle 'Australia' Modal
 
+function toggleModalTom(){
+    modalAuthor[0].classList.toggle("show-modal");
+    console.log("something clicked here");
+}
 
 function toggleModalA(){modals[0].classList.toggle("show-modal");}
-function toggleImgA(){imgBs[0].style.visibility = "visible";}
+function toggleImgA(){imgBs[0].style.display = "block";}
 
 function toggleModalV(){modals[1].classList.toggle("show-modal");}
-function toggleImgV(){imgBs[1].style.visibility = "visible";}
+function toggleImgV(){imgBs[1].style.display = "block";}
 
 function toggleModalAn(){modals[2].classList.toggle("show-modal");}
-function toggleImgAn(){imgBs[2].style.visibility = "visible";}
+function toggleImgAn(){imgBs[2].style.display = "block";}
 
 function toggleModalE(){modals[3].classList.toggle("show-modal");}
-function toggleImgE(){imgBs[3].style.visibility = "visible";}
+function toggleImgE(){imgBs[3].style.display = "block";}
 
 function toggleModalB(){modals[4].classList.toggle("show-modal");}
-function toggleImgB(){imgBs[4].style.visibility = "visible";}
+function toggleImgB(){imgBs[4].style.display = "block";}
 
 function toggleModalR(){modals[5].classList.toggle("show-modal");}
-function toggleImgR(){imgBs[5].style.visibility = "visible";}
+function toggleImgR(){imgBs[5].style.display = "block";}
 
 function toggleModalH(){modals[6].classList.toggle("show-modal");}
-function toggleImgH(){imgBs[6].style.visibility = "visible";}
+function toggleImgH(){imgBs[6].style.display = "block";}
 
 function toggleModalAp(){modals[7].classList.toggle("show-modal");}
-function toggleImgAp() {imgBs[7].style.visibility = "visible";}
+function toggleImgAp() {imgBs[7].style.display = "block";}
 
 function toggleModalAu(){modals[8].classList.toggle("show-modal");}
-function toggleImgAu(){imgBs[8].style.visibility = "visible";}
+function toggleImgAu(){imgBs[8].style.display = "block";}
 
 function toggleModalD(){modals[9].classList.toggle("show-modal");}
-function toggleImgD(){imgBs[9].style.visibility = "visible";}
+function toggleImgD(){imgBs[9].style.display = "block";}
+
+function toggleModalJ(){modals[10].classList.toggle("show-modal");}
+function toggleImgJ(){imgBs[10].style.display = "block";}
+
+function toggleModalJ2(){modals[11].classList.toggle("show-modal");}
+function toggleImgJ2(){imgBs[11].style.display = "block";}
+
+function toggleModalJ3(){modals[12].classList.toggle("show-modal");}
+function toggleImgJ3(){imgBs[12].style.display = "block";}
+
+function toggleModalJ4(){modals[13].classList.toggle("show-modal");}
+function toggleImgJ4(){imgBs[13].style.display = "block";}
+
+function toggleModalJ5(){modals[14].classList.toggle("show-modal");}
+function toggleImgJ5(){imgBs[14].style.display = "block";}
+
+function toggleModalJ6(){modals[15].classList.toggle("show-modal");}
+function toggleImgJ6(){imgBs[15].style.display = "block";}
+
+function toggleModalJ7(){modals[16].classList.toggle("show-modal");}
+function toggleImgJ7(){imgBs[16].style.display = "block";}
+
+function toggleModalJ8(){modals[17].classList.toggle("show-modal");}
+function toggleImgJ8(){imgBs[17].style.display = "block";}
 
 
 function windowOnClick(event) {
@@ -135,6 +210,14 @@ function windowOnClick(event) {
     if (event.target === modal && cardValue == 'RLodge') {toggleModalAp();}
     if (event.target === modal && cardValue == 'GVanWezel') {toggleModalAu();}
     if (event.target === modal && cardValue == 'ABeranek') {toggleModalD();}
+    if (event.target === modal && cardValue == 'HGibbs') {toggleModalJ();}
+    if (event.target === modal && cardValue == 'RBrodie') {toggleModalJ2();}
+    if (event.target === modal && cardValue == 'CHarvey') {toggleModalJ3();}
+    if (event.target === modal && cardValue == 'RBelin') {toggleModalJ4();}
+    if (event.target === modal && cardValue == 'PJFrench') {toggleModalJ5();}
+    if (event.target === modal && cardValue == 'TMCrawford') {toggleModalJ6();}
+    if (event.target === modal && cardValue == 'JGotts') {toggleModalJ7();}
+    if (event.target === modal && cardValue == 'FRGibbs') {toggleModalJ8();}
 }
 
 function disableCards(){
@@ -167,12 +250,57 @@ function resetBoard(){
 } //end function resetBoard
 
 (function shuffle(){
+    console.log("first invoked function");
+    //   removeCardsArray
+
+    // Card 1 to remove from Game
+    var card1 = document.getElementsByClassName(removeCardsArray[0]);
+    card1[0].style.display = 'none';
+    card1[1].style.display = 'none';
+    
+    // Card 2 to remove from Game
+    var card2 = document.getElementsByClassName(removeCardsArray[1]);
+    card2[0].style.display = 'none';
+    card2[1].style.display = 'none';
+    
+    // Card 3 to remove from Game
+    var card3 = document.getElementsByClassName(removeCardsArray[2]);
+    card3[0].style.display = 'none';
+    card3[1].style.display = 'none';
+    
+    // Card 4 to remove from Game
+    var card4 = document.getElementsByClassName(removeCardsArray[3]);
+    card4[0].style.display = 'none';
+    card4[1].style.display = 'none';
+
+    // Card 5 to remove from Game
+    var card5 = document.getElementsByClassName(removeCardsArray[4]);
+    card5[0].style.display = 'none';
+    card5[1].style.display = 'none';
+
+    // Card 6 to remove from Game
+    var card6 = document.getElementsByClassName(removeCardsArray[5]);
+    card6[0].style.display = 'none';
+    card6[1].style.display = 'none';
+
+    // Card 7 to remove from Game
+    var card7 = document.getElementsByClassName(removeCardsArray[6]);
+    card7[0].style.display = 'none';
+    card7[1].style.display = 'none';
+
+    // Card 8 to remove from Game
+    var card8 = document.getElementsByClassName(removeCardsArray[7]);
+    card8[0].style.display = 'none';
+    card8[1].style.display = 'none';
+    
     var i;
     //document.getElementById("wohoo").style.display = "none";
     for (i=0; i<cards.length; i++){
+
+
         let randomPos = Math.floor(Math.random()*12);
         cards[i].style.order = randomPos;
-        //cards[i].style.display = 'none';
+        ////cards[i].style.display = 'none';
     }
     
     cards.forEach(card => {
@@ -193,6 +321,8 @@ function off(){
 //MODAL LISTENERS
 //TAKEN FROM this webpage https://sabe.io/tutorials/how-to-create-modal-popup-box
 //trigger.addEventListener("click", toggleModal);
+closeButtonsAuthor[0].addEventListener("click", toggleModalTom); //Close Button A
+
 closeButtons[0].addEventListener("click", toggleModalA); //Close Button A
 closeButtons[0].addEventListener("click", toggleImgA); //Img A to appear
 
@@ -223,4 +353,32 @@ closeButtons[8].addEventListener("click", toggleImgAu); //Img R to appear Au
 closeButtons[9].addEventListener("click", toggleModalD); //Close Button D
 closeButtons[9].addEventListener("click", toggleImgD); //Img D to appear
 
+closeButtons[10].addEventListener("click", toggleModalJ); //Close Button D
+closeButtons[10].addEventListener("click", toggleImgJ); //Img D to appear
+
+closeButtons[11].addEventListener("click", toggleModalJ2); //Close Button D
+closeButtons[11].addEventListener("click", toggleImgJ2); //Img D to appear
+
+closeButtons[12].addEventListener("click", toggleModalJ3); //Close Button D
+closeButtons[12].addEventListener("click", toggleImgJ3); //Img D to appear
+
+closeButtons[13].addEventListener("click", toggleModalJ4); //Close Button D
+closeButtons[13].addEventListener("click", toggleImgJ4); //Img D to appear
+
+closeButtons[14].addEventListener("click", toggleModalJ5); //Close Button D
+closeButtons[14].addEventListener("click", toggleImgJ5); //Img D to appear
+
+closeButtons[15].addEventListener("click", toggleModalJ6); //Close Button D
+closeButtons[15].addEventListener("click", toggleImgJ6); //Img D to appear
+
+closeButtons[16].addEventListener("click", toggleModalJ7); //Close Button D
+closeButtons[16].addEventListener("click", toggleImgJ7); //Img D to appear
+
+closeButtons[17].addEventListener("click", toggleModalJ8); //Close Button D
+closeButtons[17].addEventListener("click", toggleImgJ8); //Img D to appear
+
 window.addEventListener("click", windowOnClick);
+
+function loadHome(){
+    location.reload();
+}
